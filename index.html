@@ -1,12 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <title>Narin hat 'ne 4 in AEUP 😂✨</title>
+  <style>
+    body{
+      font-family:Arial, sans-serif;
+      background:#fdf7e6;
+      margin:40px;
+      text-align:center;
+      overflow-x:hidden;
+    }
+    h1{
+      font-size:48px;
+      margin-bottom:10px;
+      animation: pop 0.7s ease forwards;
+    }
+    p{font-size:22px}
+
+    /* Box */
+    .box{
+      background:#ffe1e1;
+      padding:20px;
+      border-radius:18px;
+      display:inline-block;
+      margin-top:20px;
+      border:3px solid #ff7070;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .big{
+      font-size:90px;
+      font-weight:bold;
+      color:#ff3b3b;
+      animation: wobble 1.5s infinite;
+    }
+
+    .small{font-size:18px;color:#444;margin-top:10px}
+
+    .button{
+      margin-top:25px;
+      font-size:22px;
+      padding:12px 26px;
+      border:none;
+      border-radius:10px;
+      background:#ff7070;
+      color:white;
+      cursor:pointer;
+      transition:0.2s;
+      animation: pop 0.6s ease forwards;
+    }
+    .button:hover{
+      transform:scale(1.1);
+      background:#ff3b3b;
+    }
+
+    /* ANIMATIONEN */
+    @keyframes wobble{
+      0%{transform:rotate(0deg)}
+      25%{transform:rotate(6deg)}
+      50%{transform:rotate(0deg)}
+      75%{transform:rotate(-6deg)}
+      100%{transform:rotate(0deg)}
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
+      100%{transform:translateY(0)}
+    }
+
+    @keyframes pop{
+      0%{transform:scale(0.5); opacity:0}
+      100%{transform:scale(1); opacity:1}
+    }
+
+    @keyframes confettiFall{
+      0%{transform:translateY(-50vh) rotate(0deg)}
+      100%{transform:translateY(110vh) rotate(360deg)}
+    }
+
+    .confetti{
+      position:fixed;
+      top:-20px;
+      width:12px;
+      height:12px;
+      background:red;
+      opacity:0.8;
+      animation:confettiFall linear infinite;
+      border-radius:2px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Narin hat eine 4 in AEUP</h1>
-    <img src="image.png" alt="">
+
+  <h1>🎉 Narin hat eine 4 in AEUP!!! 😂✨</h1>
+  <p>Wissenschaftler sagen: "Es hätte schlimmer sein können." Wir glauben ihnen einfach mal 😎</p>
+
+  <div class="box">
+    <div class="big">4️⃣</div>
+    <div class="small">Die legendäre Note zwischen "geht klar" und "aua" 🤡</div>
+  </div>
+
+  <p style="margin-top:30px">Narin, du bist jetzt offiziell im <strong>4er-Elite-Club</strong>. Beitritt kostenlos, Austritt schwierig 🤣</p>
+
+  <button class="button" onclick="message()">Klick für Motivation ✨</button>
+
+  <script>
+    function message(){
+      alert('Narin, Kopf hoch – 4 heute, 3 morgen, 1 irgendwann vielleicht 😂');
+    }
+
+    // Konfetti erstellen
+    for(let i = 0; i < 50; i++){
+      let c = document.createElement('div');
+      c.className = 'confetti';
+      c.style.left = Math.random()*100 + 'vw';
+      c.style.background = `hsl(${Math.random()*360}, 80%, 60%)`;
+      c.style.animationDuration = (Math.random()*3+2) + 's';
+      c.style.animationDelay = Math.random()*3 + 's';
+      document.body.appendChild(c);
+    }
+  </script>
+
 </body>
 </html>
